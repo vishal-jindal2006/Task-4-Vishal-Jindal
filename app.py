@@ -9,7 +9,6 @@ import os
 import cv2
 import sqlite3
 import pytesseract
-import easyocr
 
 from flask import redirect
 
@@ -24,8 +23,6 @@ from reportlab.platypus import (
 from reportlab.lib.styles import (
     getSampleStyleSheet
 )
-
-reader = easyocr.Reader(['en'])
 
 app = Flask(__name__)
 
@@ -248,12 +245,10 @@ def ocr():
 
     custom_config = r'--oem 3 --psm 4'
 
-    results = reader.readtext(processed)
-
-    text = ""
-
-    for result in results:
-        text += result[1] + "\n"
+    text = pytesseract.image_to_string(
+        processed,
+        config=custom_config
+    )
 
     ocr_data = pytesseract.image_to_data(
         processed,
@@ -263,8 +258,18 @@ def ocr():
 
     confidences = []
 
-    for result in results:
-        confidences.append(result[2] * 100)
+    for conf in ocr_data["conf"]:
+
+        try:
+            conf = float(conf)
+
+            if conf > 0:
+                confidences.append(conf)
+
+        except:
+            pass
+
+    text = text.strip()
 
     if confidences:
         confidence_score = round(

@@ -150,19 +150,17 @@ http://127.0.0.1:5000
 
 ![alt text]({4DDED8E0-760B-4A8C-8027-8B8FF4FB11BB}.png)
 
-Add screenshot here.
-
 ### OCR Result Page
 
-Add screenshot here.
+ ![alt text](image.png)  ![alt text]({5BA71BBB-D1BB-45E1-80E6-32945FD2F883}.png)
 
 ### History Page
 
-Add screenshot here.
+![alt text]({E2DCA70A-C0C7-4CEC-8319-F2D445138A14}.png)
 
 ### About Page
 
-Add screenshot here.
+![alt text]({6FA1939F-E86D-487F-935B-9DDC93FB9752}.png)
 
 ---
 
