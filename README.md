@@ -148,6 +148,8 @@ http://127.0.0.1:5000
 
 ### Home Page
 
+![alt text]({4DDED8E0-760B-4A8C-8027-8B8FF4FB11BB}.png)
+
 Add screenshot here.
 
 ### OCR Result Page
