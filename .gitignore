@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+
+database/scans.db
+
+static/uploads/*
+static/exports/*
+
+.env

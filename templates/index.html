@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Recognition System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            <h2>👁️ AI Vision</h2>
+            <p>Professional OCR & Image Recognition Platform</p>
+        </div>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/history">History</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="glow"></div>
+
+        <div class="hero-content">
+
+            <h1>AI Vision Recognition System</h1>
+
+            <p>
+                Professional OCR & Image Recognition Platform
+                powered by Artificial Intelligence.
+            </p>
+
+            <form action="/ocr" method="POST" enctype="multipart/form-data">
+
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    required
+                >
+
+                <br><br>
+
+                <button type="submit" class="hero-btn">
+                    Extract Text
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="dashboard-stats">
+
+        <div class="stat-box">
+            <h2>{{ total_scans }}</h2>
+            <p>Total Scans</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>{{ avg_confidence }}%</h2>
+            <p>Average Confidence</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>{{ reports_generated }}</h2>
+            <p>Reports Generated</p>
+        </div>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <div class="card">
+            <h2>OCR Recognition</h2>
+            <p>
+                Extract text from documents,
+                invoices, notes and images.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Image Processing</h2>
+            <p>
+                Grayscale conversion,
+                Gaussian Blur and Thresholding.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Confidence Score</h2>
+            <p>
+                Validate OCR output
+                with recognition confidence.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>AI Vision Recognition System</h3>
+
+        <p>
+            Developed by Vishal Jindal
+            <br><br>
+            📧 Email: jindalvishal2006@gmail.com
+            <br><br>
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OCR Scan History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            AI Vision
+        </div>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/history">History</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- History Section -->
+
+    <section class="result-container">
+
+        <h1>OCR Scan History</h1>
+
+        <!-- Buttons -->
+
+        <div class="btn-area">
+
+            <a href="/clear-history"
+               onclick="return confirm('Are you sure you want to delete all history?')">
+
+                <button>
+                    Clear All History
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- History Table -->
+
+        <div class="history-table-container">
+
+            <table class="history-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>File Name</th>
+
+                        <th>Words</th>
+
+                        <th>Characters</th>
+
+                        <th>Confidence</th>
+
+                        <th>Scan Date</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for scan in scans %}
+
+                    <tr>
+
+                        <td>{{ scan[0] }}</td>
+
+                        <td>{{ scan[1] }}</td>
+
+                        <td>{{ scan[2] }}</td>
+
+                        <td>{{ scan[3] }}</td>
+
+                        <td>{{ scan[4] }}%</td>
+
+                        <td>{{ scan[5] }}</td>
+
+                        <td>
+
+                            <a href="/delete-history/{{ scan[0] }}"
+                               onclick="return confirm('Delete this record?')">
+
+                                <button>
+                                    Delete
+                                </button>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Back Button -->
+
+        <div class="btn-area"
+             style="margin-top:30px;">
+
+            <a href="/">
+
+                <button>
+                    Back To Home
+                </button>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

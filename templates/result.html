@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Results</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+        <div class="logo">
+            AI Vision
+        </div>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Result Section -->
+
+    <section class="result-container">
+
+        <h1>OCR Analysis Results</h1>
+
+        <!-- Statistics -->
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h2>{{ word_count }}</h2>
+                <p>Words</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>{{ char_count }}</h2>
+                <p>Characters</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>{{ confidence_score }}%</h2>
+                <p>Confidence</p>
+            </div>
+
+        </div>
+
+        <!-- Image Comparison -->
+
+        <div class="image-grid">
+
+            <div class="image-box">
+
+                <h2>Original Image</h2>
+
+                <img src="{{ image_path }}"
+                     alt="Original Image">
+
+            </div>
+
+            <div class="image-box">
+
+                <h2>Processed Image</h2>
+
+                <img src="{{ processed_image_path }}"
+                     alt="Processed Image">
+
+            </div>
+
+        </div>
+
+        <!-- OCR Text -->
+
+        <div class="text-box">
+
+            <h2>Extracted Text</h2>
+
+            <div class="ocr-output">
+                <pre>{{ text }}</pre>
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="btn-area">
+
+            <a href="/">
+                <button>
+                    Scan Another Image
+                </button>
+            </a>
+
+            <a href="/download-txt">
+                <button>
+                    Download TXT
+                </button>
+            </a>
+
+            <a href="/download-pdf">
+                <button>
+                    Download PDF
+                </button>
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
